@@ -1,0 +1,449 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+header {
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 60px;
+  padding: 0 5% 0 5%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header ul {
+  height: 80%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header ul li {
+  position: relative;
+  height: 100%;
+}
+
+header ul li img {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 50px;
+  vertical-align: top;
+}
+
+header ul li span {
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header ul li span:nth-of-type(1) {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
+header ul li span:nth-of-type(2) {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+}
+
+header ul li span:nth-of-type(3) {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+}
+
+header ul li:nth-of-type(2) {
+  height: 40%;
+}
+
+.banner {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  z-index: 4;
+  overflow: hidden;
+}
+
+.banner video {
+  height: 100%;
+  position: absolute;
+  left: 50%;
+  top: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.banner img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 6;
+  width: 55%;
+}
+
+.banner span {
+  cursor: pointer;
+  z-index: 6;
+  position: absolute;
+  left: 50%;
+  bottom: 5%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  color: #fff;
+  font-size: 50px;
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 5;
+}
+
+main .myblog {
+  width: 100vw;
+  padding: 100px 0;
+}
+
+main .myblog .title {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 30px;
+  line-height: 1.5;
+  font-weight: 900;
+}
+
+main .myblog .detail {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+main .myblog .bloggo {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #fff;
+  background-color: #1d25f1;
+  padding: 15px 50px;
+  border-radius: 30px;
+  font-size: 16px;
+  font-weight: 900;
+  margin: 30px auto 0;
+}
+
+main .blogintro {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+main .blogintro .introslide {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+main .blogintro .introslide .intro-1 {
+  padding: 60px 0 0 0;
+  width: 100vw;
+  background: #feeb0c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+main .blogintro .introslide .intro-1 img {
+  width: 200px;
+}
+
+main .blogintro .introslide .intro-1 .title {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 30px;
+  line-height: 1.5;
+  font-weight: 900;
+}
+
+main .blogintro .introslide .intro-1 .detail {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 50px;
+}
+
+main .blogintro .introslide .intro-1 .img1 {
+  width: 70vw;
+}
+
+main .blogintro .introslide .intro-2 {
+  position: relative;
+  padding: 60px 0;
+  width: 100vw;
+  background: #fd3628;
+  overflow: hidden;
+}
+
+main .blogintro .introslide .intro-2 .title {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 30px;
+  line-height: 1.5;
+  font-weight: 900;
+  color: #fff;
+}
+
+main .blogintro .introslide .intro-2 .detail {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+main .blogintro .introslide .intro-2 img {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 150%;
+}
+
+main .blogintro .introslide .intro-3 {
+  position: relative;
+  padding: 60px 0;
+  width: 100vw;
+  background: #c915f7;
+  overflow: hidden;
+}
+
+main .blogintro .introslide .intro-3 .title {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 30px;
+  line-height: 1.5;
+  font-weight: 900;
+  color: #fff;
+}
+
+main .blogintro .introslide .intro-3 .detail {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 1.5;
+  margin-bottom: 50px;
+  color: #fff;
+}
+
+main .blogintro .introslide .intro-3 img {
+  width: 130%;
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+main .episode {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 60px 0 40px 0;
+}
+
+main .episode img {
+  width: 13%;
+  vertical-align: top;
+  margin-bottom: 20px;
+  z-index: 2;
+}
+
+main .episode .title {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 30px;
+  line-height: 1.5;
+  font-weight: 900;
+  color: #fff;
+  z-index: 2;
+}
+
+main .episode .detail {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #fff;
+  z-index: 2;
+}
+
+main .episode figure {
+  cursor: pointer;
+  margin-top: 40px;
+  position: relative;
+  text-align: center;
+}
+
+main .episode figure .thum {
+  vertical-align: top;
+  width: 95%;
+  margin: 0;
+}
+
+main .episode figure .play {
+  width: 10%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+main .ep1 {
+  position: relative;
+  background: #1d25f1;
+}
+
+main .ep1::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 40vh;
+  background: url("../img/m_episode1_typo.png") center no-repeat;
+  background-size: 90%;
+  z-index: 1;
+}
+
+main .ep2 {
+  position: relative;
+  background: #8511ff;
+}
+
+main .ep2::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 40vh;
+  background: url("../img/m_episode2_typo.png") center no-repeat;
+  background-size: 90%;
+  z-index: 1;
+}
+
+main .ep3 {
+  position: relative;
+  background: #1dcfcc;
+}
+
+main .ep3::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 30vh;
+  background: url("../img/m_episode3_typo.png") center no-repeat;
+  background-size: 70%;
+  z-index: 1;
+}
+
+main .ep4 {
+  position: relative;
+  background: #fd00b5;
+}
+
+main .ep4::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 30vh;
+  background: url("../img/m_episode4_typo.png") center no-repeat;
+  background-size: 70%;
+  z-index: 1;
+}
+/*# sourceMappingURL=index.css.map */

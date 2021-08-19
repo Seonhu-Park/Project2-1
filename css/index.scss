@@ -1,0 +1,312 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap");
+
+*{
+    margin:0; padding:0;
+}
+li{list-style: none;}
+@mixin text($x){
+    text-align: center;
+    white-space: pre-line;
+    font-size:#{$x}px;
+    line-height: 1.5;
+}
+
+//MEMO 헤더 
+header{
+    z-index:100;
+    position:fixed;
+    left:0; top:0;
+    width:100vw; height:60px;
+    padding:0 5% 0 5%;
+    box-sizing: border-box;
+    display:flex;
+    align-items: center;
+    ul{
+        height:80%;
+        width:100%;
+        display:flex;
+        justify-content: space-between;
+        align-items: center;
+        li{
+            position: relative;
+            height:100%;
+            img{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                height:50px;
+                vertical-align: top;
+            }
+            span{
+                width:20px; height:2px;
+                background:#fff;
+                display:flex;
+                &:nth-of-type(1){
+                    position:absolute;
+                    right:0; top:0;
+                }
+                &:nth-of-type(2){
+                    position:absolute;
+                    right:0; top:50%;
+                    transform: translateY(-50%);
+                }
+                &:nth-of-type(3){
+                    position:absolute;
+                    right:0; bottom:0;
+                }
+            }
+            &:nth-of-type(2){
+                height:40%;
+            }
+        }
+    }
+}
+
+//MEMO 배너 
+.banner{
+    position:relative;
+    width:100vw; height:100vh;
+    z-index:4;
+    overflow: hidden;
+    video{
+        height:100%;
+        position: absolute;
+        left:50%; top:0;
+        transform:translateX(-50%);
+    }
+    img{
+        position:absolute;
+        left:50%; top:50%;
+        transform:translate(-50%,-50%);
+        z-index:6;
+        width:55%;
+    }
+    span{
+        cursor:pointer;
+        z-index:6;
+        position:absolute;
+        left:50%; bottom:5%;
+        transform: translateX(-50%);
+        color:#fff;
+        font-size:50px;
+    }
+    &::after{
+        content:'';
+        position:absolute;
+        left:0; top:0;
+        width:100%; height:100%;
+        background:rgba(0,0,0,0.5);
+        z-index:5;
+    }
+}
+
+//MEMO 메인 
+main{
+    //TODO 내 블로그 
+    .myblog{
+        width:100vw;
+        padding:100px 0;
+        .title{
+            @include text(30);
+            font-weight: 900;
+        }
+        .detail{
+            @include text(15);
+        }
+        .bloggo{
+            cursor: pointer;
+            display:flex;
+            width:fit-content;
+            color:#fff;
+            background-color: #1d25f1;
+            padding: 15px 50px;
+            border-radius: 30px;
+            font-size:16px;
+            font-weight: 900;
+            margin:30px auto 0;
+        }
+    }
+    //TODO 서비스 간단 소개 
+    .blogintro{
+        display:flex;
+        .introslide{
+            display:flex;
+            justify-content: flex-start;
+            justify-content: center;
+            .intro-1{
+                padding:60px 0 0 0;
+                width:100vw;
+                background:#feeb0c;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+                img{
+                    width:200px;
+                }
+                .title{
+                    @include text(30);
+                    font-weight: 900;
+                }
+                .detail{
+                    @include text(15);
+                    margin-bottom:50px;
+                }
+                .img1{
+                    width:70vw;
+                }
+            }
+            .intro-2{
+                position: relative;
+                padding:60px 0;
+                width:100vw;
+                background:#fd3628;
+                overflow: hidden;
+                .title{
+                    @include text(30);
+                    font-weight: 900;
+                    color:#fff;
+                }
+                .detail{
+                    @include text(15);
+                    margin-bottom:50px;
+                    color:#fff;
+                }
+                img{
+                    position:absolute;
+                    left:50%; bottom:0;
+                    transform: translateX(-50%);
+                    width:150%;
+                }
+            }
+            .intro-3{
+                position: relative;
+                padding:60px 0;
+                width:100vw;
+                background:#c915f7;
+                overflow: hidden;
+                .title{
+                    @include text(30);
+                    font-weight: 900;
+                    color:#fff;
+                }
+                .detail{
+                    @include text(15);
+                    margin-bottom:50px;
+                    color:#fff;
+                }
+                img{
+                    width:130%;
+                    position:absolute;
+                    left:50%; bottom:10px;
+                    transform:translateX(-50%);
+                }
+            }
+        }
+    }
+    //TODO 에피소드 
+    .episode{
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding:60px 0 40px 0;
+        img{
+            width:13%;
+            vertical-align: top;
+            margin-bottom:20px;
+            z-index:2;
+        }
+        .title{
+            @include text(30);
+            font-weight: 900;
+            color:#fff;
+            z-index:2;
+        }
+        .detail{
+            @include text(15);
+            color:#fff;
+            z-index:2;
+        }
+        figure{
+            cursor: pointer;
+            margin-top:40px;
+            position: relative;
+            text-align: center;
+            .thum{
+                vertical-align: top;
+                width:95%;
+                margin:0;
+            }
+            .play{
+                width:10%;
+                position: absolute;
+                left:50%; top:50%;
+                transform: translate(-50%,-50%);
+            }
+        }
+    }
+    .ep1{
+        position: relative;
+        background:#1d25f1;
+        &::after{
+            position: absolute;
+            left:0; top:0;
+            content: '';
+            display:block;
+            width:100%;
+            height:40vh;
+            background:url('../img/m_episode1_typo.png') center no-repeat;
+            background-size: 90%;
+            z-index:1;
+        }
+    }
+    .ep2{
+        position: relative;
+        background:#8511ff;
+        &::after{
+            position: absolute;
+            left:0; top:0;
+            content: '';
+            display:block;
+            width:100%;
+            height:40vh;
+            background:url('../img/m_episode2_typo.png') center no-repeat;
+            background-size: 90%;
+            z-index:1;
+        }
+    }
+    .ep3{
+        position: relative;
+        background:#1dcfcc;
+        &::after{
+            position: absolute;
+            left:0; top:0;
+            content: '';
+            display:block;
+            width:100%;
+            height:30vh;
+            background:url('../img/m_episode3_typo.png') center no-repeat;
+            background-size: 70%;
+            z-index:1;
+        }
+    }
+    .ep4{
+        position: relative;
+        background:#fd00b5;
+        &::after{
+            position: absolute;
+            left:0; top:0;
+            content: '';
+            display:block;
+            width:100%;
+            height:30vh;
+            background:url('../img/m_episode4_typo.png') center no-repeat;
+            background-size: 70%;
+            z-index:1;
+        }
+    }
+}
+
+//MEMO 푸터 
+footer{}
