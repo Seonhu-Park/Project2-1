@@ -1,7 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
 
 *{
     margin:0; padding:0;
+    font-family: 'Noto Sans KR', sans-serif;
 }
 li{list-style: none;}
 @mixin text($x){
@@ -11,302 +13,719 @@ li{list-style: none;}
     line-height: 1.5;
 }
 
-//MEMO 헤더 
-header{
-    z-index:100;
-    position:fixed;
-    left:0; top:0;
-    width:100vw; height:60px;
-    padding:0 5% 0 5%;
-    box-sizing: border-box;
-    display:flex;
-    align-items: center;
-    ul{
-        height:80%;
-        width:100%;
+body{
+    position: relative;
+    .window-size{
+        z-index: 120;
+        width:100vw; height:100%;
+        position: fixed;
+        left:0; top:0;
+        background:#fff;
+        color:#000;
+        font-size:30px;
+        text-align: center;
+        display:none;
+        padding-top:50px;
+    }
+    .window-size.show{
+        display:block;
+    }
+    //MEMO 헤더 
+    header{
+        z-index:100;
+        position:fixed;
+        left:0; top:0;
+        width:100vw; height:60px;
+        padding:0 5% 0 5%;
+        box-sizing: border-box;
         display:flex;
-        justify-content: space-between;
         align-items: center;
-        li{
-            position: relative;
-            height:100%;
-            img{
-                display:flex;
-                justify-content: center;
-                align-items: center;
-                height:50px;
-                vertical-align: top;
-            }
-            span{
-                width:20px; height:2px;
-                background:#fff;
-                display:flex;
-                &:nth-of-type(1){
-                    position:absolute;
-                    right:0; top:0;
+        ul{
+            height:80%;
+            width:100%;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            li{
+                position: relative;
+                cursor: pointer;
+                height:100%;
+                &:nth-of-type(2){
+                    width:20px;
+                }
+                img{
+                    position: absolute;
+                    top:50%;
+                    transform: translateY(-50%);
+                    display:flex;
+                    justify-content: center;
+                    align-items: center;
+                    height:25px;
+                    vertical-align: top;
+                }
+                span{
+                    width:20px; height:2px;
+                    background:#fff;
+                    display:flex;
+                    &:nth-of-type(1){
+                        position:absolute;
+                        right:0; top:0;
+                    }
+                    &:nth-of-type(2){
+                        position:absolute;
+                        right:0; top:50%;
+                        transform: translateY(-50%);
+                    }
+                    &:nth-of-type(3){
+                        position:absolute;
+                        right:0; bottom:0;
+                    }
                 }
                 &:nth-of-type(2){
-                    position:absolute;
-                    right:0; top:50%;
-                    transform: translateY(-50%);
+                    height:40%;
                 }
-                &:nth-of-type(3){
-                    position:absolute;
-                    right:0; bottom:0;
-                }
-            }
-            &:nth-of-type(2){
-                height:40%;
             }
         }
     }
-}
-
-//MEMO 배너 
-.banner{
-    position:relative;
-    width:100vw; height:100vh;
-    z-index:4;
-    overflow: hidden;
-    video{
-        height:100%;
-        position: absolute;
-        left:50%; top:0;
-        transform:translateX(-50%);
-    }
-    img{
-        position:absolute;
-        left:50%; top:50%;
-        transform:translate(-50%,-50%);
-        z-index:6;
-        width:55%;
-    }
-    span{
-        cursor:pointer;
-        z-index:6;
-        position:absolute;
-        left:50%; bottom:5%;
-        transform: translateX(-50%);
+    .menu{
+        display:none;
         color:#fff;
-        font-size:50px;
-    }
-    &::after{
-        content:'';
-        position:absolute;
+        z-index: 100;
+        position: fixed;
         left:0; top:0;
-        width:100%; height:100%;
-        background:rgba(0,0,0,0.5);
-        z-index:5;
+        width:100vw; height:100vh;
+        box-sizing: border-box;
+        background:#000;
+        .menu-hd{
+            margin:20px;
+            display:flex;
+            justify-content: space-between;
+            align-items: center;
+            figure{
+                display:flex;
+                justify-content: flex-start;
+                align-items: center;
+                img{height:30px; margin-right:10px;}
+                span{
+                    @include text(15);
+                }
+            }
+            img{
+                width:30px;
+            }
+        }
+        .menu-con{
+            height:100%;
+            box-sizing: border-box;
+            display:flex;
+            .menutab{
+                width:60vw;
+                margin-left:20px;
+                display:flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: flex-start;
+                p{
+                    font-size:30px;
+                    font-family: 'Do Hyeon', sans-serif;
+                }
+            }
+            .taball{
+                display:flex;
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                display:none;
+                width:40vw;
+                overflow-y:scroll;
+                margin: 0 20px;
+                li{
+                    box-sizing: border-box;
+                    border-radius: 10px;
+                    position: relative;
+                    width:100%; height:230px;
+                    margin-bottom:20px;
+                    padding: 20px;
+                    display:flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                    align-items: flex-start;
+                    img{
+                        position: relative;
+                        height:15px;
+                        z-index: 5;
+                    }
+                    p{
+                        position: relative;
+                        font-family: 'Do Hyeon', sans-serif;
+                        white-space: pre-line;
+                        z-index: 5;
+                    }
+                    .human{
+                        z-index: 4;
+                        height:90%;
+                        position: absolute;
+                        left:50%; top:50%;
+                        transform:translate(-50%,-50%);
+                    }
+                }
+                li:nth-of-type(1){
+                    background:#fd00b5;
+                }
+                li:nth-of-type(2){
+                    background:#1dcfcc;
+                }
+                li:nth-of-type(3){
+                    background:#8511ff;
+                }
+                li:nth-of-type(4){
+                    background:#1d25f1;
+                }
+            }
+            .taball.active{
+                display:flex;
+            }
+            .tab1{
+            }
+            .tab2{}
+            .tab3{}
+        }
     }
-}
+    .menu.active{
+        display:block;
+    }
 
-//MEMO 메인 
-main{
-    //TODO 내 블로그 
-    .myblog{
-        width:100vw;
-        padding:100px 0;
-        .title{
-            @include text(30);
-            font-weight: 900;
+    //MEMO 배너 
+    .banner{
+        position:relative;
+        width:100vw; height:100vh;
+        z-index:4;
+        overflow: hidden;
+        video{
+            height:100%;
+            position: absolute;
+            left:50%; top:0;
+            transform:translateX(-50%);
         }
-        .detail{
-            @include text(15);
+        img{
+            position:absolute;
+            left:50%; top:50%;
+            transform:translate(-50%,-50%);
+            z-index:6;
+            width:55%;
         }
-        .bloggo{
-            cursor: pointer;
-            display:flex;
-            width:fit-content;
+        span{
+            cursor:pointer;
+            z-index:6;
+            position:absolute;
+            left:50%; bottom:5%;
+            transform: translateX(-50%);
             color:#fff;
-            background-color: #1d25f1;
-            padding: 15px 50px;
-            border-radius: 30px;
-            font-size:16px;
-            font-weight: 900;
-            margin:30px auto 0;
+            font-size:50px;
+        }
+        &::after{
+            content:'';
+            position:absolute;
+            left:0; top:0;
+            width:100%; height:100%;
+            background:rgba(0,0,0,0.5);
+            z-index:5;
         }
     }
-    //TODO 서비스 간단 소개 
-    .blogintro{
-        display:flex;
-        .introslide{
+
+    //MEMO 메인 
+    main{
+        width:100vw;
+        overflow: hidden;
+        //TODO 내 블로그 
+        .myblog{
+            width:100vw;
+            padding:100px 0;
+            .title{
+                @include text(30);
+                font-family: 'Do Hyeon', sans-serif;
+            }
+            .detail{
+                @include text(15);
+            }
+            .bloggo{
+                cursor: pointer;
+                display:flex;
+                width:fit-content;
+                color:#fff;
+                background-color: #1d25f1;
+                padding: 15px 50px;
+                border-radius: 30px;
+                font-size:16px;
+                font-weight: 900;
+                margin:30px auto 0;
+            }
+        }
+        //TODO 서비스 간단 소개 
+        .blogintro{
             display:flex;
-            justify-content: flex-start;
+            position: relative;
+            width:100vw; height:600px;
+            .introslide{
+                height:100%;
+                display:flex;
+                position:absolute;
+                left:0; top:0;
+                justify-content: flex-start;
+                justify-content: center;
+                pointer-events: none;
+                // transform:translateX(-100vw) ;
+                .intro-1{
+                    padding:60px 0 0 0;
+                    width:100vw;
+                    background:#feeb0c;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    flex-direction: column;
+                    img{
+                        width:200px;
+                    }
+                    .title{
+                        @include text(30);
+                        font-family: 'Do Hyeon', sans-serif;
+                    }
+                    .detail{
+                        @include text(15);
+                        margin-bottom:50px;
+                    }
+                    .img1{
+                        width:70vw;
+                    }
+                }
+                .intro-2{
+                    position: relative;
+                    padding:60px 0;
+                    width:100vw;
+                    background:#fd3628;
+                    overflow: hidden;
+                    .title{
+                        @include text(30);
+                        font-family: 'Do Hyeon', sans-serif;
+                        color:#fff;
+                        font{
+                            font-family: 'Do Hyeon', sans-serif;
+                        }
+                    }
+                    .detail{
+                        @include text(15);
+                        margin-bottom:50px;
+                        color:#fff;
+                    }
+                    img{
+                        position:absolute;
+                        left:50%; bottom:0;
+                        transform: translateX(-50%);
+                        width:150%;
+                    }
+                }
+                .intro-3{
+                    position: relative;
+                    padding:60px 0;
+                    width:100vw;
+                    background:#c915f7;
+                    overflow: hidden;
+                    .title{
+                        @include text(30);
+                        font-family: 'Do Hyeon', sans-serif;
+                        color:#fff;
+                        font{
+                            font-family: 'Do Hyeon', sans-serif;
+                        }
+                    }
+                    .detail{
+                        @include text(15);
+                        margin-bottom:50px;
+                        color:#fff;
+                    }
+                    img{
+                        width:130%;
+                        position:absolute;
+                        left:50%; bottom:10px;
+                        transform:translateX(-50%);
+                    }
+                }
+            }
+        }
+        //TODO 에피소드 
+        .episode{
+            display:flex;
+            flex-direction: column;
             justify-content: center;
-            .intro-1{
-                padding:60px 0 0 0;
-                width:100vw;
-                background:#feeb0c;
-                display: flex;
+            align-items: center;
+            padding:60px 0 40px 0;
+            img{
+                width:13%;
+                vertical-align: top;
+                margin-bottom:20px;
+                z-index:2;
+            }
+            .title{
+                @include text(30);
+                font-family: 'Do Hyeon', sans-serif;
+                color:#fff;
+                z-index:2;
+            }
+            .detail{
+                @include text(15);
+                color:#fff;
+                z-index:2;
+            }
+            figure{
+                cursor: pointer;
+                margin-top:40px;
+                position: relative;
+                text-align: center;
+                .thum{
+                    vertical-align: top;
+                    width:95%;
+                    margin:0;
+                }
+                .play{
+                    width:10%;
+                    position: absolute;
+                    left:50%; top:50%;
+                    transform: translate(-50%,-50%);
+                }
+            }
+        }
+
+        .ep1{
+            position: relative;
+            background:#1d25f1;
+            &::after{
+                position: absolute;
+                left:0; top:0;
+                content: '';
+                display:block;
+                width:100%;
+                height:40vh;
+                background:url('../img/m_episode1_typo.png') center no-repeat;
+                background-size: 90%;
+                z-index:1;
+            }
+        }
+        .ep2{
+            position: relative;
+            background:#8511ff;
+            &::after{
+                position: absolute;
+                left:0; top:0;
+                content: '';
+                display:block;
+                width:100%;
+                height:40vh;
+                background:url('../img/m_episode2_typo.png') center no-repeat;
+                background-size: 90%;
+                z-index:1;
+            }
+        }
+        .ep3{
+            position: relative;
+            background:#1dcfcc;
+            &::after{
+                position: absolute;
+                left:0; top:0;
+                content: '';
+                display:block;
+                width:100%;
+                height:30vh;
+                background:url('../img/m_episode3_typo.png') center no-repeat;
+                background-size: 70%;
+                z-index:1;
+            }
+        }
+        .ep4{
+            position: relative;
+            background:#fd00b5;
+            &::after{
+                position: absolute;
+                left:0; top:0;
+                content: '';
+                display:block;
+                width:100%;
+                height:30vh;
+                background:url('../img/m_episode4_typo.png') center no-repeat;
+                background-size: 70%;
+                z-index:1;
+            }
+        }
+        //TODO 손글씨 
+        .cali{
+            position: relative;
+            width:100%;
+            padding:60px 0 40px 0;
+            background: #f4f4f4;
+            .title{
+                @include text(30);
+                font-family: 'Do Hyeon', sans-serif;
+            }
+            .detail{
+                @include text(15);
+            }
+            .slider{
+                width:100%;
+                height:fit-content;
+                overflow: hidden;
+                ul.slider-inner{
+                    width:145%; height:100%;
+                    display:grid;
+                    grid-template-columns: repeat(4,1fr);
+                    gap:80px;
+                    margin-left:20px;
+                    pointer-events: none;
+                    li{
+                        box-shadow: 0 0 20px rgba(0,0,0,0.1);
+                        border-radius: 8px;
+                        display:flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+                        width:100%;
+                        padding:40px 25px;
+                        margin:30px 20px 0 0;
+                        background:#fff;
+                        img{
+                            width:200px;
+                        }
+                        figure{
+                            width:50px;
+                            text-align: center;
+                            position: relative;
+                            img{
+                                position: relative;
+                                width:50px;
+                                z-index:2;
+                            }
+                            &::before{
+                                content: '';
+                                width:200px; height:1px;
+                                display:inline-block;
+                                background: #ddd;
+                                position: absolute;
+                                left:50%; top:50%;
+                                transform: translate(-50%,-50%);
+                                z-index:1;
+                            }
+                        }
+                        p{
+                            font-size:20px;
+                            font-family: 'Do Hyeon', sans-serif;
+                            margin-top:20px;
+                        }
+                        span{
+                            cursor: pointer;
+                            font-size:14px;
+                            font-family: 'Do Hyeon', sans-serif;
+                            border:1px solid #999;
+                            border-radius: 30px;
+                            padding: 5px 20px;
+                            margin-top:10px;
+                        }
+                    }
+                }
+            }
+            
+        }
+        //TODO 블로그 즐기는 방법 
+        .enjoy{
+            display:flex;
+            flex-direction: column;
+            align-items: flex-start;
+            background:#fff;
+            padding: 60px 0 0 0;
+            .title{
+                margin:0 auto;
+                @include text(30);
+                font-family: 'Do Hyeon', sans-serif;
+            }
+            ul{
+                margin-top:40px;
+                margin-left:2.5%;
+                border-radius: 10px;
+                display:flex;
+                justify-content: flex-start;
+                align-items: center;
+                li{
+                    position: relative;
+                    width:95vw;
+                    padding: 40px 0 250px 0;
+                    display:flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: center;
+                    overflow: hidden;
+                    .subtit{
+                        @include text(18);
+                        font-family: 'Do Hyeon', sans-serif;
+                    }
+                    .title{
+                        @include text(25);
+                        font-family: 'Do Hyeon', sans-serif;
+                    }
+                    .detail{
+                        @include text(15);
+                    }
+                    span{
+                        cursor:pointer;
+                        margin:0 auto;
+                        @include text(13);
+                        font-weight: 900;
+                        background: #000;
+                        color:#fff;
+                        padding:10px 20px;
+                        border-radius: 30px;
+                    }
+                    img{
+                        position: absolute;
+                        left:50%; bottom:0;
+                        transform: translateX(-50%);
+                        width:500px;
+                    }
+                }
+                li:nth-of-type(1){
+                    background: #26ffdd;
+                    .subtit{
+                        color:#1d25f1;
+                    }
+                }
+                li:nth-of-type(2){
+                    background: #20d6fe;
+                    .subtit{
+                        color:#8511ff;
+                    }
+                }
+                li:nth-of-type(3){
+                    background: #fd7202;
+                    .subtit{
+                        color:#feeb0c;
+                    }
+                }
+            }
+        }
+        //TODO 블로그피블&픽 
+        .pick{
+            padding: 60px 0;
+            .title{
+                @include text(30);
+                font-family: 'Do Hyeon', sans-serif;
+            }
+            ul{
+                width:95%;
+                margin:40px auto 0;
+                li{
+                    cursor: pointer;
+                    width:100%;
+                    height:320px;
+                    border:1px solid #ddd;
+                    border-radius: 10px;
+                    overflow: hidden;
+                    figure{
+                        position: relative;
+                        width:100%;
+                        height:190px;
+                        overflow: hidden;
+                        img{
+                            position: absolute;
+                            top:50%;
+                            transform: translateY(-50%);
+                            width:100%;
+                        }
+                    }
+                    .sub{
+                        margin:20px 20px 0;
+                        font-size:15px;
+                        font-weight: 900;
+                    }
+                    .tit{
+                        margin:0 20px;
+                        font-size:20px;
+                        font-family: 'Do Hyeon', sans-serif;
+                    }
+                }
+            }
+            span{
+                cursor: pointer;
+                display:flex;
                 justify-content: center;
                 align-items: center;
-                flex-direction: column;
-                img{
-                    width:200px;
-                }
-                .title{
-                    @include text(30);
-                    font-weight: 900;
-                }
-                .detail{
-                    @include text(15);
-                    margin-bottom:50px;
-                }
-                .img1{
-                    width:70vw;
-                }
-            }
-            .intro-2{
-                position: relative;
-                padding:60px 0;
-                width:100vw;
-                background:#fd3628;
-                overflow: hidden;
-                .title{
-                    @include text(30);
-                    font-weight: 900;
-                    color:#fff;
-                }
-                .detail{
-                    @include text(15);
-                    margin-bottom:50px;
-                    color:#fff;
-                }
-                img{
-                    position:absolute;
-                    left:50%; bottom:0;
-                    transform: translateX(-50%);
-                    width:150%;
-                }
-            }
-            .intro-3{
-                position: relative;
-                padding:60px 0;
-                width:100vw;
-                background:#c915f7;
-                overflow: hidden;
-                .title{
-                    @include text(30);
-                    font-weight: 900;
-                    color:#fff;
-                }
-                .detail{
-                    @include text(15);
-                    margin-bottom:50px;
-                    color:#fff;
-                }
-                img{
-                    width:130%;
-                    position:absolute;
-                    left:50%; bottom:10px;
-                    transform:translateX(-50%);
-                }
+                margin:30px auto 0;
+                font-size:15px;
+                font-weight: 900;
+                border:2px solid black;
+                border-radius: 30px;
+                padding:10px 0px;
+                width:35%;
             }
         }
     }
-    //TODO 에피소드 
-    .episode{
-        display:flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding:60px 0 40px 0;
-        img{
-            width:13%;
-            vertical-align: top;
-            margin-bottom:20px;
-            z-index:2;
-        }
-        .title{
-            @include text(30);
-            font-weight: 900;
-            color:#fff;
-            z-index:2;
-        }
-        .detail{
-            @include text(15);
-            color:#fff;
-            z-index:2;
-        }
-        figure{
-            cursor: pointer;
-            margin-top:40px;
+
+    //MEMO 푸터 
+    footer{
+        .ft_bg{
             position: relative;
-            text-align: center;
-            .thum{
-                vertical-align: top;
-                width:95%;
-                margin:0;
+            height:400px;
+            background:url('../img/img_download_bg.jpg') center no-repeat;
+            background-size: cover;
+            display:flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            .title{
+                position: relative;
+                z-index: 10;
+                @include text(30);
+                font-family: 'Do Hyeon', sans-serif;
+                color:#fff;
             }
-            .play{
-                width:10%;
+            .detail{
+                position: relative;
+                z-index: 10;
+                @include text(15);
+                color:#fff;
+            }
+            figure{
+                position: relative;
+                z-index: 10;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    cursor: pointer;
+                    width:150px;
+                    margin:30px 5px 0;
+                }
+            }
+            &::after{
                 position: absolute;
-                left:50%; top:50%;
-                transform: translate(-50%,-50%);
+                left:0; top:0;
+                content:'';
+                width:100%; height:100%;
+                background:rgba(0,0,0,0.6);
             }
         }
-    }
-    .ep1{
-        position: relative;
-        background:#1d25f1;
-        &::after{
-            position: absolute;
-            left:0; top:0;
-            content: '';
-            display:block;
-            width:100%;
-            height:40vh;
-            background:url('../img/m_episode1_typo.png') center no-repeat;
-            background-size: 90%;
-            z-index:1;
-        }
-    }
-    .ep2{
-        position: relative;
-        background:#8511ff;
-        &::after{
-            position: absolute;
-            left:0; top:0;
-            content: '';
-            display:block;
-            width:100%;
-            height:40vh;
-            background:url('../img/m_episode2_typo.png') center no-repeat;
-            background-size: 90%;
-            z-index:1;
-        }
-    }
-    .ep3{
-        position: relative;
-        background:#1dcfcc;
-        &::after{
-            position: absolute;
-            left:0; top:0;
-            content: '';
-            display:block;
-            width:100%;
-            height:30vh;
-            background:url('../img/m_episode3_typo.png') center no-repeat;
-            background-size: 70%;
-            z-index:1;
-        }
-    }
-    .ep4{
-        position: relative;
-        background:#fd00b5;
-        &::after{
-            position: absolute;
-            left:0; top:0;
-            content: '';
-            display:block;
-            width:100%;
-            height:30vh;
-            background:url('../img/m_episode4_typo.png') center no-repeat;
-            background-size: 70%;
-            z-index:1;
+        div{
+            padding:30px;
+            p{
+                font-size:14px;
+                text-align: center;
+                line-height: 2;
+            }
+            figure{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                img{
+                    cursor: pointer;
+                    width:25px;
+                    margin:30px 10px 0;
+                }
+            }
         }
     }
 }
-
-//MEMO 푸터 
-footer{}

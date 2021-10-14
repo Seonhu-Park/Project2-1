@@ -5,16 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>블로그 캠페인</title>
     <link href="css/index.css" rel="stylesheet">
+    <link href="css/slick.css" rel="stylesheet">
 
     <link rel="shortcut icon" href="img/favicon.ico">
     <link rel="apple-touch-icon-precomposed" sizes="114*114" href="img/favicon.ico">
+
+    <script src="js/index.js"></script>
 </head>
 <body>
+    <div class="window-size">
+        width of browser is too wide!<br>
+        모바일 전용 사이트입니다.<br>화면 크기를 조정해주세요.
+    </div>
 
 <!-- MEMO 헤더  -->
 <header>
     <ul>
-        <li><img src="img/pc_spot_logo.png"></li>
+        <li><img src="img/logo1.png"></li>
         <li>
             <span></span>
             <span></span>
@@ -22,6 +29,60 @@
         </li>
     </ul>
 </header>
+
+<!-- MEMO navi -->
+<div class="menu">
+    <div class="menu-hd">
+        <figure>
+            <img src="img/프로필 이미지.png">
+            <span>로그인이 필요합니다.</span>
+        </figure>
+        <img src="img/xbtn.png" id="xbtn">
+    </div>
+    <div class="menu-con">
+        <div class="menutab">
+            <p>캠페인 홈</p>
+            <p>블로그피플</p>
+            <p>블로그픽</p>
+        </div>
+        <ul class="tab1 taball active">
+            <li>
+                <img src="img/ep4.png">
+                <p>기록이 쌓이면
+                    덕력이 된다
+                    서연편</p>
+                <img src="img/m_allview_home_4.png" class="human">
+            </li>
+            <li>
+                <img src="img/ep3.png">
+                <p>기록이 쌓이면
+                    이력이 된다
+                    동현편</p>
+                <img src="img/m_allview_home_3.png" class="human">
+                <li>
+                    <img src="img/ep2.png">
+                    <p>기록이 쌓이면
+                        브랜드가 된다
+                        제니편</p>
+                    <img src="img/m_allview_home_2.png" class="human">
+                </li>
+                <li>
+                    <img src="img/ep1.png">
+                    <p>기록이 쌓이면
+                        스토리가 된다
+                        은지편</p>
+                    <img src="img/m_allview_home_1.png" class="human">
+                </li>
+            </li>
+        </ul>
+        <ul class="tab2 taball">
+            <li></li>
+        </ul>
+        <ul class="tab3 taball">
+            <li></li>
+        </ul>
+    </div>
+</div>
 
 <!-- MEMO 배너  -->
 <div class="banner">
@@ -134,11 +195,152 @@
             <img src="img/play4.png" class="play">
         </figure>
     </div>
+    <!-- TODO 손글씨 -->
+    <div class="cali">
+        <div class="title">블로거의 손글씨로
+            더 특별해진
+            캠페인 스페셜 로고</div>
+        <div class="detail">
+            라이프로그.블로그 캠페인의 스페셜 로고는
+            블로거들의 손글씨 콜라보로 완성되었는데요.
+            다양한 블로거의 개성과 목소리를 담고자 했습니다.
+            블로그 곳곳에서 선보이는 손글씨 스페셜 로고 제작에는
+            Adrian(서호성), HWL(이혜원), 캘리애(배정애),
+            뀰(김규림)님께서 참여해주셨습니다.
+            앞으로 더 많이 관심 갖고 애정해주세요!</div>
+        <div class="slider">
+            <ul class="slider-inner">
+                <li>
+                    <img src="img/Adrian의 Lifelog.Blog 손글씨.png">
+                    <figure>
+                        <img src="img/Adrian 프로필.png">
+                    </figure>
+                    <p>Adrian</p>
+                    <span>블로그가기</span>
+                </li>
+                <li>
+                    <img src="img/HWL의 Lifelog.Blog 손글씨.png">
+                    <figure>
+                        <img src="img/Adrian 프로필 (1).png">
+                    </figure>
+                    <p>HWL</p>
+                    <span>블로그가기</span>
+                </li>
+                <li>
+                    <img src="img/캘리애의 Lifelog.Blog 손글씨.png">
+                    <figure>
+                        <img src="img/캘리애 프로필.png">
+                    </figure>
+                    <p>캘리애</p>
+                    <span>블로그가기</span>
+                </li>
+                <li>
+                    <img src="img/뀰의 Lifelog.Blog 손글씨.png">
+                    <figure>
+                        <img src="img/뀰 프로필.png">
+                    </figure>
+                    <p>뀰</p>
+                    <span>블로그가기</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- TODO 블로그 즐기는 방법 -->
+    <div class="enjoy">
+        <div class="title">블로그를 더 다양하게
+            즐기는 방법</div>
+        <ul>
+            <li>
+                <div class="subtit">스마트 에디터
+
+                </div>
+                <div class="title">나를 가장 잘 표현해주는
+                    똑똑한 에디터</div>
+                <div class="detail">
+                    글, 사진, 영상까지 내 기록을 쉽고 편하게!
+                    스마트 에디터로 블로그에 나만의
+                    기록을 남겨보세요.
+                
+                </div>
+                <span>스마트 에디터 소개</span>
+                <img src="img/m_intro_slide_se.png">
+            </li>
+            <li>
+                <div class="subtit">모먼트
+
+                </div>
+                <div class="title">내가 느끼고 경험하는
+                    이 순간의 기록</div>
+                <div class="detail">
+                    찰나의 풍경, 홈 쿠킹, 생생 리뷰까지
+                    지금 이 순간을 퀵하게!
+                    숏폼 영상 모먼트로 남겨보세요.
+                
+                </div>
+                <span>모먼트 홈</span>
+                <img src="img/m_intro_slide_moment.png">
+            </li>
+            <li>
+                <div class="subtit">블로그 마켓
+
+                </div>
+                <div class="title">더 가까워진
+                    1인 셀러의 꿈</div>
+                <div class="detail">
+                    이웃들과 소통하며 상품 판매까지 한 번에!
+                    1인 셀러를 꿈꾸고 있다면 나만의 팝업스토어,
+                    블로그 마켓을 열어보세요.
+                
+                </div>
+                <span>마켓 플레이스</span>
+                <img src="img/m_intro_slide_market.png">
+            </li>
+        </ul>
+    </div>
+    <!-- TODO 블로그피플&픽 -->
+    <div class="pick">
+        <div class="title">블로그피플 & 픽
+            콘텐츠를 소개합니다.</div>
+        <ul>
+            <li>
+                <figure>
+                    <img src="img/20210817094937_45a81e3f6ca2cec56fee44f1b28aa1c2.png">
+                </figure>
+                <p class="sub">블로그픽</p>
+                <p class="tit">알고 보니 내 얼굴 만화주인공 재질</p>
+                <p class="sub">VOL 5 2021.08.17</p>
+                <div></div>
+            </li>
+        </ul>
+        <span>더보기</span>
+    </div>
 </main>
 
 <!-- MEMO 푸터  -->
 <footer>
-
+    <div class="ft_bg">
+        <div class="title">어디에서나 편리하게
+            블로그를 사용하세요.</div>
+        <div class="detail">
+            가지고 있는 모든 디바이스에서
+            블로그와 함께하세요.</div>
+        <figure>
+            <img src="img/app1.png">
+            <img src="img/app2.png">
+        </figure>
+    </div>
+    <div>
+        <p>블로그 캠페인 관련 문의</p>
+        <p>Copyright © NAVER Corp. All Rights Reserved.</p>
+        <figure>
+            <img src="img/blog.png">
+            <img src="img/band.png">
+            <img src="img/cafe.png">
+            <img src="img/facebook.png">
+            <img src="img/twitter.png">
+            <img src="img/link.png">
+        </figure>
+    </div>
 </footer>
 
 </body>

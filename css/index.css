@@ -1,14 +1,39 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap");
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
 li {
   list-style: none;
 }
 
-header {
+body {
+  position: relative;
+}
+
+body .window-size {
+  z-index: 120;
+  width: 100vw;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: #fff;
+  color: #000;
+  font-size: 30px;
+  text-align: center;
+  display: none;
+  padding-top: 50px;
+}
+
+body .window-size.show {
+  display: block;
+}
+
+body header {
   z-index: 100;
   position: fixed;
   left: 0;
@@ -26,7 +51,7 @@ header {
           align-items: center;
 }
 
-header ul {
+body header ul {
   height: 80%;
   width: 100%;
   display: -webkit-box;
@@ -40,12 +65,21 @@ header ul {
           align-items: center;
 }
 
-header ul li {
+body header ul li {
   position: relative;
+  cursor: pointer;
   height: 100%;
 }
 
-header ul li img {
+body header ul li:nth-of-type(2) {
+  width: 20px;
+}
+
+body header ul li img {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -55,11 +89,11 @@ header ul li img {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 50px;
+  height: 25px;
   vertical-align: top;
 }
 
-header ul li span {
+body header ul li span {
   width: 20px;
   height: 2px;
   background: #fff;
@@ -68,13 +102,13 @@ header ul li span {
   display: flex;
 }
 
-header ul li span:nth-of-type(1) {
+body header ul li span:nth-of-type(1) {
   position: absolute;
   right: 0;
   top: 0;
 }
 
-header ul li span:nth-of-type(2) {
+body header ul li span:nth-of-type(2) {
   position: absolute;
   right: 0;
   top: 50%;
@@ -82,17 +116,197 @@ header ul li span:nth-of-type(2) {
           transform: translateY(-50%);
 }
 
-header ul li span:nth-of-type(3) {
+body header ul li span:nth-of-type(3) {
   position: absolute;
   right: 0;
   bottom: 0;
 }
 
-header ul li:nth-of-type(2) {
+body header ul li:nth-of-type(2) {
   height: 40%;
 }
 
-.banner {
+body .menu {
+  display: none;
+  color: #fff;
+  z-index: 100;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: #000;
+}
+
+body .menu .menu-hd {
+  margin: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .menu .menu-hd figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body .menu .menu-hd figure img {
+  height: 30px;
+  margin-right: 10px;
+}
+
+body .menu .menu-hd figure span {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+body .menu .menu-hd img {
+  width: 30px;
+}
+
+body .menu .menu-con {
+  height: 100%;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .menu .menu-con .menutab {
+  width: 60vw;
+  margin-left: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+body .menu .menu-con .menutab p {
+  font-size: 30px;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+body .menu .menu-con .taball {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: none;
+  width: 40vw;
+  overflow-y: scroll;
+  margin: 0 20px;
+}
+
+body .menu .menu-con .taball li {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 230px;
+  margin-bottom: 20px;
+  padding: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+body .menu .menu-con .taball li img {
+  position: relative;
+  height: 15px;
+  z-index: 5;
+}
+
+body .menu .menu-con .taball li p {
+  position: relative;
+  font-family: 'Do Hyeon', sans-serif;
+  white-space: pre-line;
+  z-index: 5;
+}
+
+body .menu .menu-con .taball li .human {
+  z-index: 4;
+  height: 90%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+body .menu .menu-con .taball li:nth-of-type(1) {
+  background: #fd00b5;
+}
+
+body .menu .menu-con .taball li:nth-of-type(2) {
+  background: #1dcfcc;
+}
+
+body .menu .menu-con .taball li:nth-of-type(3) {
+  background: #8511ff;
+}
+
+body .menu .menu-con .taball li:nth-of-type(4) {
+  background: #1d25f1;
+}
+
+body .menu .menu-con .taball.active {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body .menu.active {
+  display: block;
+}
+
+body .banner {
   position: relative;
   width: 100vw;
   height: 100vh;
@@ -100,7 +314,7 @@ header ul li:nth-of-type(2) {
   overflow: hidden;
 }
 
-.banner video {
+body .banner video {
   height: 100%;
   position: absolute;
   left: 50%;
@@ -109,7 +323,7 @@ header ul li:nth-of-type(2) {
           transform: translateX(-50%);
 }
 
-.banner img {
+body .banner img {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -119,7 +333,7 @@ header ul li:nth-of-type(2) {
   width: 55%;
 }
 
-.banner span {
+body .banner span {
   cursor: pointer;
   z-index: 6;
   position: absolute;
@@ -131,7 +345,7 @@ header ul li:nth-of-type(2) {
   font-size: 50px;
 }
 
-.banner::after {
+body .banner::after {
   content: '';
   position: absolute;
   left: 0;
@@ -142,27 +356,32 @@ header ul li:nth-of-type(2) {
   z-index: 5;
 }
 
-main .myblog {
+body main {
+  width: 100vw;
+  overflow: hidden;
+}
+
+body main .myblog {
   width: 100vw;
   padding: 100px 0;
 }
 
-main .myblog .title {
+body main .myblog .title {
   text-align: center;
   white-space: pre-line;
   font-size: 30px;
   line-height: 1.5;
-  font-weight: 900;
+  font-family: 'Do Hyeon', sans-serif;
 }
 
-main .myblog .detail {
+body main .myblog .detail {
   text-align: center;
   white-space: pre-line;
   font-size: 15px;
   line-height: 1.5;
 }
 
-main .myblog .bloggo {
+body main .myblog .bloggo {
   cursor: pointer;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -179,25 +398,33 @@ main .myblog .bloggo {
   margin: 30px auto 0;
 }
 
-main .blogintro {
+body main .blogintro {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: relative;
+  width: 100vw;
+  height: 600px;
 }
 
-main .blogintro .introslide {
+body main .blogintro .introslide {
+  height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  position: absolute;
+  left: 0;
+  top: 0;
   -webkit-box-pack: start;
       -ms-flex-pack: start;
           justify-content: flex-start;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  pointer-events: none;
 }
 
-main .blogintro .introslide .intro-1 {
+body main .blogintro .introslide .intro-1 {
   padding: 60px 0 0 0;
   width: 100vw;
   background: #feeb0c;
@@ -216,19 +443,19 @@ main .blogintro .introslide .intro-1 {
           flex-direction: column;
 }
 
-main .blogintro .introslide .intro-1 img {
+body main .blogintro .introslide .intro-1 img {
   width: 200px;
 }
 
-main .blogintro .introslide .intro-1 .title {
+body main .blogintro .introslide .intro-1 .title {
   text-align: center;
   white-space: pre-line;
   font-size: 30px;
   line-height: 1.5;
-  font-weight: 900;
+  font-family: 'Do Hyeon', sans-serif;
 }
 
-main .blogintro .introslide .intro-1 .detail {
+body main .blogintro .introslide .intro-1 .detail {
   text-align: center;
   white-space: pre-line;
   font-size: 15px;
@@ -236,11 +463,11 @@ main .blogintro .introslide .intro-1 .detail {
   margin-bottom: 50px;
 }
 
-main .blogintro .introslide .intro-1 .img1 {
+body main .blogintro .introslide .intro-1 .img1 {
   width: 70vw;
 }
 
-main .blogintro .introslide .intro-2 {
+body main .blogintro .introslide .intro-2 {
   position: relative;
   padding: 60px 0;
   width: 100vw;
@@ -248,16 +475,20 @@ main .blogintro .introslide .intro-2 {
   overflow: hidden;
 }
 
-main .blogintro .introslide .intro-2 .title {
+body main .blogintro .introslide .intro-2 .title {
   text-align: center;
   white-space: pre-line;
   font-size: 30px;
   line-height: 1.5;
-  font-weight: 900;
+  font-family: 'Do Hyeon', sans-serif;
   color: #fff;
 }
 
-main .blogintro .introslide .intro-2 .detail {
+body main .blogintro .introslide .intro-2 .title font {
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+body main .blogintro .introslide .intro-2 .detail {
   text-align: center;
   white-space: pre-line;
   font-size: 15px;
@@ -266,7 +497,7 @@ main .blogintro .introslide .intro-2 .detail {
   color: #fff;
 }
 
-main .blogintro .introslide .intro-2 img {
+body main .blogintro .introslide .intro-2 img {
   position: absolute;
   left: 50%;
   bottom: 0;
@@ -275,7 +506,7 @@ main .blogintro .introslide .intro-2 img {
   width: 150%;
 }
 
-main .blogintro .introslide .intro-3 {
+body main .blogintro .introslide .intro-3 {
   position: relative;
   padding: 60px 0;
   width: 100vw;
@@ -283,16 +514,20 @@ main .blogintro .introslide .intro-3 {
   overflow: hidden;
 }
 
-main .blogintro .introslide .intro-3 .title {
+body main .blogintro .introslide .intro-3 .title {
   text-align: center;
   white-space: pre-line;
   font-size: 30px;
   line-height: 1.5;
-  font-weight: 900;
+  font-family: 'Do Hyeon', sans-serif;
   color: #fff;
 }
 
-main .blogintro .introslide .intro-3 .detail {
+body main .blogintro .introslide .intro-3 .title font {
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+body main .blogintro .introslide .intro-3 .detail {
   text-align: center;
   white-space: pre-line;
   font-size: 15px;
@@ -301,7 +536,7 @@ main .blogintro .introslide .intro-3 .detail {
   color: #fff;
 }
 
-main .blogintro .introslide .intro-3 img {
+body main .blogintro .introslide .intro-3 img {
   width: 130%;
   position: absolute;
   left: 50%;
@@ -310,7 +545,7 @@ main .blogintro .introslide .intro-3 img {
           transform: translateX(-50%);
 }
 
-main .episode {
+body main .episode {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -327,24 +562,24 @@ main .episode {
   padding: 60px 0 40px 0;
 }
 
-main .episode img {
+body main .episode img {
   width: 13%;
   vertical-align: top;
   margin-bottom: 20px;
   z-index: 2;
 }
 
-main .episode .title {
+body main .episode .title {
   text-align: center;
   white-space: pre-line;
   font-size: 30px;
   line-height: 1.5;
-  font-weight: 900;
+  font-family: 'Do Hyeon', sans-serif;
   color: #fff;
   z-index: 2;
 }
 
-main .episode .detail {
+body main .episode .detail {
   text-align: center;
   white-space: pre-line;
   font-size: 15px;
@@ -353,20 +588,20 @@ main .episode .detail {
   z-index: 2;
 }
 
-main .episode figure {
+body main .episode figure {
   cursor: pointer;
   margin-top: 40px;
   position: relative;
   text-align: center;
 }
 
-main .episode figure .thum {
+body main .episode figure .thum {
   vertical-align: top;
   width: 95%;
   margin: 0;
 }
 
-main .episode figure .play {
+body main .episode figure .play {
   width: 10%;
   position: absolute;
   left: 50%;
@@ -375,12 +610,12 @@ main .episode figure .play {
           transform: translate(-50%, -50%);
 }
 
-main .ep1 {
+body main .ep1 {
   position: relative;
   background: #1d25f1;
 }
 
-main .ep1::after {
+body main .ep1::after {
   position: absolute;
   left: 0;
   top: 0;
@@ -393,12 +628,12 @@ main .ep1::after {
   z-index: 1;
 }
 
-main .ep2 {
+body main .ep2 {
   position: relative;
   background: #8511ff;
 }
 
-main .ep2::after {
+body main .ep2::after {
   position: absolute;
   left: 0;
   top: 0;
@@ -411,12 +646,12 @@ main .ep2::after {
   z-index: 1;
 }
 
-main .ep3 {
+body main .ep3 {
   position: relative;
   background: #1dcfcc;
 }
 
-main .ep3::after {
+body main .ep3::after {
   position: absolute;
   left: 0;
   top: 0;
@@ -429,12 +664,12 @@ main .ep3::after {
   z-index: 1;
 }
 
-main .ep4 {
+body main .ep4 {
   position: relative;
   background: #fd00b5;
 }
 
-main .ep4::after {
+body main .ep4::after {
   position: absolute;
   left: 0;
   top: 0;
@@ -445,5 +680,417 @@ main .ep4::after {
   background: url("../img/m_episode4_typo.png") center no-repeat;
   background-size: 70%;
   z-index: 1;
+}
+
+body main .cali {
+  position: relative;
+  width: 100%;
+  padding: 60px 0 40px 0;
+  background: #f4f4f4;
+}
+
+body main .cali .title {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 30px;
+  line-height: 1.5;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+body main .cali .detail {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+body main .cali .slider {
+  width: 100%;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  overflow: hidden;
+}
+
+body main .cali .slider ul.slider-inner {
+  width: 145%;
+  height: 100%;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[4];
+      grid-template-columns: repeat(4, 1fr);
+  gap: 80px;
+  margin-left: 20px;
+  pointer-events: none;
+}
+
+body main .cali .slider ul.slider-inner li {
+  -webkit-box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  padding: 40px 25px;
+  margin: 30px 20px 0 0;
+  background: #fff;
+}
+
+body main .cali .slider ul.slider-inner li img {
+  width: 200px;
+}
+
+body main .cali .slider ul.slider-inner li figure {
+  width: 50px;
+  text-align: center;
+  position: relative;
+}
+
+body main .cali .slider ul.slider-inner li figure img {
+  position: relative;
+  width: 50px;
+  z-index: 2;
+}
+
+body main .cali .slider ul.slider-inner li figure::before {
+  content: '';
+  width: 200px;
+  height: 1px;
+  display: inline-block;
+  background: #ddd;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  z-index: 1;
+}
+
+body main .cali .slider ul.slider-inner li p {
+  font-size: 20px;
+  font-family: 'Do Hyeon', sans-serif;
+  margin-top: 20px;
+}
+
+body main .cali .slider ul.slider-inner li span {
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Do Hyeon', sans-serif;
+  border: 1px solid #999;
+  border-radius: 30px;
+  padding: 5px 20px;
+  margin-top: 10px;
+}
+
+body main .enjoy {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background: #fff;
+  padding: 60px 0 0 0;
+}
+
+body main .enjoy .title {
+  margin: 0 auto;
+  text-align: center;
+  white-space: pre-line;
+  font-size: 30px;
+  line-height: 1.5;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+body main .enjoy ul {
+  margin-top: 40px;
+  margin-left: 2.5%;
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body main .enjoy ul li {
+  position: relative;
+  width: 95vw;
+  padding: 40px 0 250px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow: hidden;
+}
+
+body main .enjoy ul li .subtit {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 18px;
+  line-height: 1.5;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+body main .enjoy ul li .title {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 25px;
+  line-height: 1.5;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+body main .enjoy ul li .detail {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+body main .enjoy ul li span {
+  cursor: pointer;
+  margin: 0 auto;
+  text-align: center;
+  white-space: pre-line;
+  font-size: 13px;
+  line-height: 1.5;
+  font-weight: 900;
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 30px;
+}
+
+body main .enjoy ul li img {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 500px;
+}
+
+body main .enjoy ul li:nth-of-type(1) {
+  background: #26ffdd;
+}
+
+body main .enjoy ul li:nth-of-type(1) .subtit {
+  color: #1d25f1;
+}
+
+body main .enjoy ul li:nth-of-type(2) {
+  background: #20d6fe;
+}
+
+body main .enjoy ul li:nth-of-type(2) .subtit {
+  color: #8511ff;
+}
+
+body main .enjoy ul li:nth-of-type(3) {
+  background: #fd7202;
+}
+
+body main .enjoy ul li:nth-of-type(3) .subtit {
+  color: #feeb0c;
+}
+
+body main .pick {
+  padding: 60px 0;
+}
+
+body main .pick .title {
+  text-align: center;
+  white-space: pre-line;
+  font-size: 30px;
+  line-height: 1.5;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+body main .pick ul {
+  width: 95%;
+  margin: 40px auto 0;
+}
+
+body main .pick ul li {
+  cursor: pointer;
+  width: 100%;
+  height: 320px;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+body main .pick ul li figure {
+  position: relative;
+  width: 100%;
+  height: 190px;
+  overflow: hidden;
+}
+
+body main .pick ul li figure img {
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  width: 100%;
+}
+
+body main .pick ul li .sub {
+  margin: 20px 20px 0;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+body main .pick ul li .tit {
+  margin: 0 20px;
+  font-size: 20px;
+  font-family: 'Do Hyeon', sans-serif;
+}
+
+body main .pick span {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 30px auto 0;
+  font-size: 15px;
+  font-weight: 900;
+  border: 2px solid black;
+  border-radius: 30px;
+  padding: 10px 0px;
+  width: 35%;
+}
+
+body footer .ft_bg {
+  position: relative;
+  height: 400px;
+  background: url("../img/img_download_bg.jpg") center no-repeat;
+  background-size: cover;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body footer .ft_bg .title {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  white-space: pre-line;
+  font-size: 30px;
+  line-height: 1.5;
+  font-family: 'Do Hyeon', sans-serif;
+  color: #fff;
+}
+
+body footer .ft_bg .detail {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  white-space: pre-line;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #fff;
+}
+
+body footer .ft_bg figure {
+  position: relative;
+  z-index: 10;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body footer .ft_bg figure img {
+  cursor: pointer;
+  width: 150px;
+  margin: 30px 5px 0;
+}
+
+body footer .ft_bg::after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+
+body footer div {
+  padding: 30px;
+}
+
+body footer div p {
+  font-size: 14px;
+  text-align: center;
+  line-height: 2;
+}
+
+body footer div figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body footer div figure img {
+  cursor: pointer;
+  width: 25px;
+  margin: 30px 10px 0;
 }
 /*# sourceMappingURL=index.css.map */
